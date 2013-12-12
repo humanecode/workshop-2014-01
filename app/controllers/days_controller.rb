@@ -8,7 +8,11 @@ class DaysController < ApplicationController
     @day = Date.today
     @prev = @day.prev_day
     @next = @day.next_day
+<<<<<<< HEAD
     @posts = standup.posts_for @group, @day
+=======
+    @posts = @group.posts_for @day
+>>>>>>> Add Comments controller
     render "posts/index"
   end
 
