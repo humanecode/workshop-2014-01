@@ -9,7 +9,7 @@ class DaysController < ApplicationController
     @prev = @day.prev_day
     @next = @day.next_day
     @posts = standup.posts_for @group, @day
-    render "show"
+    render "posts/index"
   end
 
   def show
@@ -17,6 +17,7 @@ class DaysController < ApplicationController
     @prev = @day.prev_day
     @next = @day.next_day
     @posts = standup.posts_for @group, @day
+    render "posts/index"
   end
 
   protected
