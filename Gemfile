@@ -40,6 +40,10 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem "autotest-rails"
 gem "minitest-rails"
 
+group :dev, :test do
+  gem "minitest-rails-capybara"
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
