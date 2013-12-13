@@ -1,6 +1,8 @@
 require "test_helper"
 
-class GroupsControllerTest < ActionController::TestCase
+class GroupsControllerFooTest < ActionController::TestCase
+  tests GroupsController
+
   def test_index
     get :index
     assert_response :success
