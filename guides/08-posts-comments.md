@@ -4,7 +4,7 @@ Posts and Comments
 We are able to display posts on a group/day by using only methods from Standup.
 
     standup = Standup.new
-    group = standup.groups.find params[:group_id]
+    group = standup.find_group params[:group_id]
     day = Date.parse params[:day_id]
     post = standup.posts_for group, day
 

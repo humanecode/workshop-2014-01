@@ -11,7 +11,7 @@
   <% end %>
 </p>
 
-<ul>
+<ul class="posts">
   <% @posts.each do |post| %>
     <li><%= post.user.name %> says: <%= post.body %> - <%= pluralize post.comments.count, "comment" %></li>
   <% end %>

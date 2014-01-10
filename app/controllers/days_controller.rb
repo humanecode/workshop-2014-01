@@ -8,7 +8,7 @@ class DaysController < ApplicationController
     @day = Date.today
     @prev = @day.prev_day
     @next = @day.next_day
-    @posts = @group.posts_for @day
+    @posts = standup.posts_for @group, @day
     render "show"
   end
 
@@ -16,13 +16,17 @@ class DaysController < ApplicationController
     @day = date
     @prev = @day.prev_day
     @next = @day.next_day
-    @posts = @group.posts_for @day
+    @posts = standup.posts_for @group, @day
   end
 
   protected
 
+  def standup
+    @standup ||= Standup.new
+  end
+
   def set_group
-    @group = Group.find params[:group_id]
+    @group = standup.find_group params[:group_id]
   end
 
   def date

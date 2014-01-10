@@ -21,6 +21,11 @@ class StandupTest < ActiveSupport::TestCase
     assert_includes standup.groups, group
   end
 
+  def test_find_group
+    found_group = standup.find_group group.id
+    assert_equal found_group, group
+  end
+
   def test_users_for
     assert_includes standup.users_for(group), member
     refute_includes standup.users_for(group), nonmember

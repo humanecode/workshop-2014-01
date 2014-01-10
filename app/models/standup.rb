@@ -3,6 +3,10 @@ class Standup
     Group.all
   end
 
+  def find_group id
+    groups.find id
+  end
+
   def users_for group
     group.users
   end

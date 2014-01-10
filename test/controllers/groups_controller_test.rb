@@ -6,7 +6,7 @@ class GroupsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  def test_index
+  def test_show
     get :show, id: groups(:payroll)
     assert_response :success
   end
